@@ -3,7 +3,7 @@ import VueGtag, { trackRouter } from "vue-gtag-next";
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGtag, {
     property: {
-      id: "G-SKX3FKPPM9",
+      id: "",
     },
   });
   trackRouter(useRouter());
