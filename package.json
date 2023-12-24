@@ -1,0 +1,33 @@
+{
+  "name": "Reinspire",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
+  },
+  "engines": {
+    "node": ">=19",
+    "npm": ">=8"
+  },
+  "devDependencies": {
+    "@sidebase/nuxt-session": "^0.2.7",
+    "@types/node": "^18",
+    "@types/vimeo__player": "^2.18.0",
+    "nuxt": "^3.4.3",
+    "nuxt-simple-sitemap": "^3.3.5",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.12",
+    "@vimeo/player": "^2.20.1",
+    "graphql": "^16.6.0",
+    "graphql-request": "^6.0.0",
+    "gsap": "^3.11.5",
+    "vue-gtag-next": "^1.14.0"
+  }
+}

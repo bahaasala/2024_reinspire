@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+// General
+body{
+    height: 100%;
+    background-color: #131010;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+// Fonts
+// Headings
+h1 {
+    font-family: 'Condor-Light';
+    font-weight: 100;
+    color: $color-white;
+    font-size: 40px;
+}
+h2 {
+    font-family: 'Condor-Regular';
+    font-weight: 100;
+    color: $color-white;
+    font-size: 40px;
+}
+h3 {
+    font-family: 'Condor-Regular';
+    font-weight: 100;
+    color: $color-white;
+    font-size: 30px;
+}
+
+// Paragraphs and Links
+p, span, a {
+    color: $color-white;
+}
+a{
+    font-family: 'Condor-Light';
+    font-size: 18px;
+}
+p, span {
+    font-family: 'Condor-Light';
+    font-weight: 100;
+    font-size: 18px;
+}
+
+li {
+    font-family: 'Condor-Light'
+}
+
+// Loading
+.loading {
+
+}
+
+/* Simple Radial Mouse Cursor */
+//  #mouse-circle {
+//     position: absolute;
+//     width: 10px;
+//     height: 10px;
+//     margin: -20px 0px 0px -12px;
+//     background-color: #ffffff;
+//     border-radius: 50%;
+//     pointer-events: none !important;
+//     box-shadow: 0 0 16px rgba(255, 255, 255, 0);
+// }
+
+// year
+.year{
+    span{
+        font-size: 20px;
+    }
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+// Grain effect
+// .bg-grain {
+//     height: 100vh;
+//     pointer-events: none;
+//     z-index: auto;
+//     position: fixed;
+//     top: 0%;
+//     bottom: 0%;
+//     left: 0%;
+//     right: 0%;
+//     z-index: 999999;
+// }
+// .bg-grain:after {
+//     animation: grain 8s steps(10) infinite;
+//     background-image: url("../../../../images/noise.jpg");
+//     content: "";
+//     height: 300%;
+//     left: -50%;
+//     opacity: 0.08;
+//     position: fixed;
+//     z-index: -10;
+//     top: -100%;
+//     width: 300%;
+// }
+
+// Image overlay
+.image-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #131010 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: 99;
+}
+
+// Black and white effect
+.black-white{
+    filter: grayscale(1);
+    transition: filter 0.5s ease-in-out;
+    &:hover{
+        filter: grayscale(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transition: 3s cubic-bezier(0.075, 0.60, 0.165, 1);
+    transform: translateY(200px);
+}
+
+.in-view{
+    opacity: 1 !important;
+    transform: translateY(0px);
+}
+
+// hide scroll bar horizontal
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+@keyframes grain {
+    0% {
+        transform: translateZ(0)
+    }
+
+    10% {
+        transform: translate3d(2rem,-9rem,0)
+    }
+
+    20% {
+        transform: translate3d(1rem,-4rem,0)
+    }
+
+    30% {
+        transform: translate3d(-8rem,-7rem,0)
+    }
+
+    40% {
+        transform: translate3d(5rem,6rem,0)
+    }
+
+    50% {
+        transform: translate3d(-1rem,8rem,0)
+    }
+
+    60% {
+        transform: translate3d(5rem,2rem,0)
+    }
+
+    70% {
+        transform: translate3d(-8rem,-5rem,0)
+    }
+
+    80% {
+        transform: translate3d(6rem,1rem,0)
+    }
+
+    90% {
+        transform: translate3d(9rem,5rem,0)
+    }
+
+    to {
+        transform: translate3d(0,-6rem,0)
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: tramslate(0px, 0px);
+        width: 0px;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(300px, 0px);
+    }
+}
