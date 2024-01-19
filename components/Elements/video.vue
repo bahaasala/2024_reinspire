@@ -148,7 +148,7 @@ $component: "video";
     user-select: none;
     font-size: 20px;
     &__text {
-      color: #717171;
+      color: #4f4f4d;
       text-align: right;
       margin: 0;
       padding-right: 7px;

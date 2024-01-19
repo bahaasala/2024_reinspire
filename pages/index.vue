@@ -8,14 +8,13 @@
   </div>
   <div class="home" v-else>
     <GlobalLoadingOpen />
-    <h1>Develop branch</h1>
     <ElementsIntro :homepage="homepage" />
     <ElementsVideo :homepage="homepage" />
     <ElementsWorks :homepage="homepage" />
     <ElementsAbout :homepage="homepage" />
     <ElementsContact :homepage="homepage" />
   </div>
-</template>
+</template> 
 
 <script lang="ts">
 import { ref, defineComponent, onMounted } from "vue";
