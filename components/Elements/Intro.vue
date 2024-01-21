@@ -4,12 +4,12 @@
       <ul>
         <li v-for="(image, index) in homepage.images" :key="image.url">
           <figure>
-            <NuxtImg preload format="webp" :src="image.url" :alt="image.alt" :width="image.width" :height="image.height"
-              class="intro-photo-img black-white" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" />
+            <NuxtImg format="webp" :src="image.url" :alt="image.alt" :width="image.width" :height="image.height"
+              class="intro-photo-img black-white" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave"
+              draggable="false" />
           </figure>
         </li>
       </ul>
-      <!-- <div class="intro-circle-shape"></div> -->
     </section>
     <section class="intro-text-section">
       <p>{{ homepage.introText }}</p>
@@ -69,11 +69,6 @@ $component: "intro";
   margin-top: 3rem;
 
   &-section {
-
-    // position: relative;
-    // display: grid;
-    // grid-template-columns: auto auto auto auto;
-    // gap: 40px;
     ul {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -84,124 +79,38 @@ $component: "intro";
 
       li {
         position: relative;
-        // padding: auto;
         overflow: hidden;
-        // max-height: 600px;
         width: 100%;
-
-        &:hover {
-          .cat-title {
-            // transform: translate(-50%, 200%);
-
-            h2 {
-              // transform: translate(0%, 0%);
-            }
-
-          }
-
-          .btn {
-            opacity: 1;
-            transform: translateY(-6rem);
-          }
-
-          img {
-            // scale: 1.1;
-          }
-        }
+        user-select: none;
 
         figure {
+          height: 100%;
+          left: 0;
+          margin: 0;
+          padding: 0;
           cursor: pointer;
           // cursor: url(https://www.datocms-assets.com/101417/1703522179-cursor.svg) 15 15, move;
           text-decoration: none;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            translate: none;
+            transition: filter 0.5s ease-in-out, transform 0.1s ease;
+          }
         }
       }
 
       li:nth-of-type(even) {
         margin-top: 10rem;
-        // margin-top: 75px;
       }
 
       li:nth-of-type(odd) {
         margin-bottom: 10rem;
       }
-
-      figure {
-        // position: relative;
-        height: 100%;
-        left: 0;
-        margin: 0;
-        padding: 0;
-      }
-
-      .cat-title {
-        h2 {
-          font-size: 7rem;
-          margin: 0;
-          text-align: right;
-          // grid-area: 2;
-          // rotate: 90deg;
-        }
-
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        display: grid;
-        align-items: end;
-        justify-items: center;
-        transform: translate(0%, 0%);
-        transition: 1s ease-in-out;
-        pointer-events: none;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        translate: none;
-        transition: filter 0.5s ease-in-out, transform 0.1s ease;
-      }
-
-      .action-btns {
-        position: relative;
-        z-index: 100;
-        display: flex;
-      }
-
-      .btn {
-        opacity: 0;
-        display: block;
-        transform: translateY(10rem);
-        transition: 0.25s ease-in-out;
-        margin-left: 2rem;
-      }
     }
   }
-
-  // &-photo {
-  //   overflow: hidden;
-  //   max-height: 500px;
-  //   width: 100%;
-
-  //   &-img {
-  //     translate: none;
-  //     width: 100%;
-  //     height: auto;
-  //     transition: filter 0.5s ease-in-out, transform 0.1s ease;
-  //   }
-  // }
-
-  // &-photo:first-child {}
-
-  // &-photo:nth-of-type(2) {
-  //   margin-top: 100px;
-  // }
-
-  // &-photo:nth-of-type(3) {}
-
-  // &-photo:nth-of-type(4) {
-  //   margin-top: 100px;
-  // }
 
   &-text-section {
     max-width: 120rem;
@@ -222,7 +131,7 @@ $component: "intro";
     }
   }
 
-  // Media Queries
+  // Repsonsive
   @media (max-width: 767px) {
     margin-top: 0;
 
@@ -249,19 +158,6 @@ $component: "intro";
       }
     }
 
-    // &-photo {
-    //   width: calc(250px - 50px);
-    //   min-width: calc(250px - 50px);
-    //   padding-left: 0;
-    //   scroll-snap-align: center;
-    //   display: flex;
-    //   flex-flow: column nowrap;
-
-    //   &-img {
-    //     transform: translate(-1.005px, 1.86px) scale(1.02, 1.02) !important;
-    //   }
-    // }
-
     &-text-section {
       margin-top: 2.5rem;
       margin-bottom: 7.5rem;
@@ -271,18 +167,6 @@ $component: "intro";
         padding: 1.5rem;
       }
     }
-
-    // &-circle-shape {
-    //   height: 300px;
-    //   width: 300px;
-    //   background-color: #262626;
-    //   z-index: -1;
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    //   border-radius: 50%;
-    // }
   }
 }
 </style>
