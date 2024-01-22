@@ -64,6 +64,20 @@ interface Work {
   secondMockupsTwoColumns: Image[];
 }
 
+// collection
+interface Collection {
+  seo: {
+    title: string;
+    description: string;
+    image: {
+      url: string;
+    };
+  };
+  id: string;
+  title: string;
+  slug: string;
+}
+
 // category
 interface Category {
   name: string;
