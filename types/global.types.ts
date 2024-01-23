@@ -76,6 +76,8 @@ interface Collection {
   id: string;
   title: string;
   slug: string;
+  collectionBanner: Image;
+  description: string;
 }
 
 // category

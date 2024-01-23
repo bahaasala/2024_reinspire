@@ -11,8 +11,15 @@ const query = `
             id
             title
             slug
+            collectionBanner {
+              url
+              width
+              height
+              alt
             }
-        }
+            description
+          }
+      }
 `;
 
 export default query;

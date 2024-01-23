@@ -1,5 +1,11 @@
 <template>
-    <h1>Collections single page</h1>
+    <GlobalMetaData :title="collection.seo.title" :description="collection.seo.description" />
+    <section class="collection">
+        <h1>{{ collection.title }}</h1>
+        <div class="collection__banner" :style="`background-image: url(${collection.collectionBanner.url})`">
+        </div>
+        <p>{{ collection.description }}</p>
+    </section>
 </template>
 
 <script lang="ts">
@@ -30,6 +36,8 @@ export default defineComponent({
             id: "",
             title: "",
             slug: "",
+            collectionBanner: Image,
+            description: "",
         });
 
         const router = useRouter();
@@ -103,5 +111,16 @@ export default defineComponent({
 <style lang="scss">
 $component: "collection";
 
-.#{$component} {}
+.#{$component} {
+    display: flex;
+    flex-direction: column;
+
+    &__banner {
+        order: -1;
+        height: 70vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
 </style>
