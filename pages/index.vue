@@ -1,8 +1,5 @@
 <template>
-  <GlobalMetaData
-    :title="homepage.seo.title"
-    :description="homepage.seo.description"
-  />
+  <GlobalMetaData :title="homepage.seo.title" :description="homepage.seo.description" />
   <div v-if="loaded == '0'">
     <GlobalLoading :onComplete="handleLoadingComplete" />
   </div>
@@ -93,9 +90,11 @@ export default defineComponent({
 $component: "home";
 
 .#{$component} {
+
   margin-top: 120px;
+
   @media (max-width: 767px) {
-    margin-top: 100px;
+    margin-top: 0;
   }
 }
 </style>

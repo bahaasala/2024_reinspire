@@ -1,6 +1,7 @@
 <template>
   <div class="intro">
     <section class="intro-section">
+      <h2 class="visually-hidden">Reinspire Studio Introduction</h2>
       <ul>
         <li v-for="(image, index) in homepage.images" :key="image.url">
           <figure>
@@ -12,6 +13,7 @@
       </ul>
     </section>
     <section class="intro-text-section">
+      <h2 class="visually-hidden">Reinspire Services</h2>
       <p>{{ homepage.introText }}</p>
     </section>
   </div>
@@ -27,6 +29,7 @@ export default defineComponent({
     },
   },
   setup() {
+    // move picture on mouse move
     const handleMouseMove = (event: MouseEvent): void => {
       const introPhoto = event.currentTarget as HTMLElement;
       const containerRect = introPhoto.getBoundingClientRect();
@@ -118,11 +121,6 @@ $component: "intro";
     display: flex;
     justify-content: space-around;
 
-    h1 {
-      font-size: 5rem;
-      max-width: 50%;
-    }
-
     p {
       color: #8c8b87;
       text-align: center;
@@ -141,19 +139,34 @@ $component: "intro";
       flex-grow: 1;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
-      margin-left: 2rem;
+      // margin-left: 2rem;
       gap: 2rem;
 
-      ul li {
-        width: calc(25rem - 5rem);
-        min-width: calc(25rem - 5rem);
-        padding-left: 0;
-        scroll-snap-align: center;
-        display: flex;
-        flex-flow: column nowrap;
+      ul {
+        grid-gap: 0;
 
-        img {
-          transform: translate(-1.005px, 1.86px) scale(1.02, 1.02) !important;
+        li {
+          width: 100%;
+          min-width: 100vw;
+          // width: calc(25rem - 5rem);
+          // min-width: calc(25rem - 5rem);
+          padding-left: 0;
+          scroll-snap-align: center;
+          display: flex;
+          flex-flow: column nowrap;
+          min-height: 100vh;
+
+          img {
+            transform: translate(-1.005px, 1.86px) scale(1.02, 1.02) !important;
+          }
+        }
+
+        li:nth-of-type(even) {
+          margin-top: 0;
+        }
+
+        li:nth-of-type(odd) {
+          margin-bottom: 0;
         }
       }
     }

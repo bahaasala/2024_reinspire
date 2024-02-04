@@ -4,7 +4,7 @@
         <h1>{{ collection.title }}</h1>
         <div class="collection__banner" :style="`background-image: url(${collection.collectionBanner.url})`">
         </div>
-        <p>{{ collection.description }}</p>
+        <p class="collection__description">{{ collection.description }}</p>
     </section>
 </template>
 
@@ -121,6 +121,10 @@ $component: "collection";
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    &__description {
+        margin-bottom: 100em;
     }
 }
 </style>

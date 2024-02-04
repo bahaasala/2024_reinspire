@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-// Px to REM: Override root font-size: 62.5%;
+// Px to REM: Override root font-size: 62.5%
 html {
     font-size: 62.5%;
 }
@@ -53,6 +53,19 @@ p, span {
 
 li {
     font-family: 'Condor-Light'
+}
+
+// Visually hidden
+.visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
 }
 
 // Loading
