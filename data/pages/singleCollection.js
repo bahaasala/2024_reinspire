@@ -18,6 +18,12 @@ const query = `
               alt
             }
             description
+            visualsThreeColumns{
+              url
+              width
+              height
+              alt
+            }
           }
       }
 `;

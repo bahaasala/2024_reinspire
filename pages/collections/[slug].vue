@@ -5,6 +5,15 @@
         <div class="collection__banner" :style="`background-image: url(${collection.collectionBanner.url})`">
         </div>
         <p class="collection__description">{{ collection.description }}</p>
+        <ul class="collection__visuals-col3">
+            <li v-for="item in collection.visualsThreeColumns">
+                <figure>
+                    <NuxtImg format="webp" :src="item.url" :alt="item.alt" :width="item.width" :height="item.height"
+                        class="black-white" draggable="false" />
+                </figure>
+            </li>
+            <!-- Collection Photos -->
+        </ul>
     </section>
 </template>
 
@@ -38,6 +47,7 @@ export default defineComponent({
             slug: "",
             collectionBanner: Image,
             description: "",
+            visualsThreeColumns: [],
         });
 
         const router = useRouter();
@@ -124,7 +134,24 @@ $component: "collection";
     }
 
     &__description {
-        margin-bottom: 100em;
+        // margin-bottom: 100em;
+    }
+
+    &__visuals-col3 {
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+
+        figure {
+            margin: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }
 </style>

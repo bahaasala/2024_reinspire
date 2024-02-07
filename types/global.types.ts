@@ -78,6 +78,7 @@ interface Collection {
   slug: string;
   collectionBanner: Image;
   description: string;
+  visualsThreeColumns: Image[];
 }
 
 // category
