@@ -3,12 +3,33 @@
     <section class="intro-section">
       <h2 class="visually-hidden">Reinspire Studio Introduction</h2>
       <ul>
-        <li v-for="(image, index) in homepage.images" :key="image.url">
-          <figure>
+        <!-- <li v-for="(image, index) in homepage.images" :key="image.url"> -->
+        <!-- <figure>
             <NuxtImg format="webp" :src="image.url" :alt="image.alt" :width="image.width" :height="image.height"
               class="intro-photo-img black-white" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave"
               draggable="false" />
-          </figure>
+          </figure> -->
+        <!-- <video type="video/mp4" width="100%" height="100%" autoplay loop muted playsinline nocontrols preload="auto">
+            <source src="https://www.datocms-assets.com/101417/1690986623-reinspire_showreel_2023.mp4">
+          </video> -->
+
+        <!-- <video type="video/mp4" width="1200" height="900" autoplay loop muted playsinline nocontrols preload="auto">
+            <source src="https://www.datocms-assets.com/101417/1690986623-reinspire_showreel_2023.mp4">
+          </video> -->
+        <!-- </li> -->
+        <!-- collections -->
+        <li v-for="collection in homepage.collections" :key="collection.slug">
+          <NuxtLink :to="`/collections/${collection.slug}`">
+            <figure>
+              <NuxtImg format="webp" :src="collection.collectionPicture.url" :alt="collection.collectionPicture.alt"
+                :width="collection.collectionPicture.width" :height="collection.collectionPicture.height"
+                class="intro-photo-img black-white" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave"
+                draggable="false" />
+            </figure>
+            <div class="intro__single-item-container">
+              <h3>{{ collection.title }}</h3>
+            </div>
+          </NuxtLink>
         </li>
       </ul>
     </section>
@@ -103,6 +124,12 @@ $component: "intro";
             transition: filter 0.5s ease-in-out, transform 0.1s ease;
           }
         }
+
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
       li:nth-of-type(even) {
@@ -156,8 +183,17 @@ $component: "intro";
           flex-flow: column nowrap;
           min-height: 100vh;
 
-          img {
-            transform: translate(-1.005px, 1.86px) scale(1.02, 1.02) !important;
+          a {
+            position: relative;
+          }
+
+          figure {
+            height: 100vh;
+
+            img {
+              height: 100vh;
+              transform: translate(-1.005px, 1.86px) scale(1.02, 1.02) !important;
+            }
           }
         }
 
@@ -170,6 +206,16 @@ $component: "intro";
         }
       }
     }
+
+    &__single-item-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0rem 1.5rem 0rem 1.5rem;
+    }
+
 
     &-text-section {
       margin-top: 2.5rem;

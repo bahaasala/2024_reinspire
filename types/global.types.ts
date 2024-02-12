@@ -14,6 +14,7 @@ interface Homepage {
   year: number;
   videoId: string;
   works: Works[];
+  collections: Collections[];
   imageBahaa: Image;
   aboutBahaa: string;
   imageMilo: Image;
@@ -41,6 +42,14 @@ interface Works {
   featuredImage: Image;
 }
 
+// collections
+interface Collections {
+  id: string;
+  title: string;
+  slug: string;
+  collectionPicture: Image;
+}
+
 // single work
 interface Work {
   seo: {
@@ -64,7 +73,7 @@ interface Work {
   secondMockupsTwoColumns: Image[];
 }
 
-// collection
+// single collection
 interface Collection {
   seo: {
     title: string;

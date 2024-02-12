@@ -1,10 +1,12 @@
 <template>
     <GlobalMetaData :title="collection.seo.title" :description="collection.seo.description" />
     <section class="collection">
-        <h1>{{ collection.title }}</h1>
+        <section class="collection-intro-container">
+            <h1>{{ collection.title }}</h1>
+            <p class="collection__description">{{ collection.description }}</p>
+        </section>
         <div class="collection__banner" :style="`background-image: url(${collection.collectionBanner.url})`">
         </div>
-        <p class="collection__description">{{ collection.description }}</p>
         <ul class="collection__visuals-col3">
             <li v-for="item in collection.visualsThreeColumns">
                 <figure>
@@ -12,7 +14,6 @@
                         class="black-white" draggable="false" />
                 </figure>
             </li>
-            <!-- Collection Photos -->
         </ul>
     </section>
 </template>
@@ -125,6 +126,26 @@ $component: "collection";
     display: flex;
     flex-direction: column;
 
+    &-intro-container {
+        width: 100%;
+        max-width: 120rem;
+        margin: 10rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 7rem;
+
+        h1,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            max-width: 60rem;
+        }
+    }
+
     &__banner {
         order: -1;
         height: 70vh;
@@ -133,18 +154,17 @@ $component: "collection";
         background-repeat: no-repeat;
     }
 
-    &__description {
-        // margin-bottom: 100em;
-    }
+    &__description {}
 
     &__visuals-col3 {
-        display: flex;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         margin: 0;
         padding: 0;
 
         figure {
             margin: 0;
+            height: 100%;
 
             img {
                 width: 100%;

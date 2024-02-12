@@ -34,6 +34,16 @@ const query = `
           height
         }
       }
+      collections {
+        title
+        slug
+        collectionPicture {
+          url
+          alt
+          width
+          height
+        }
+      }
       imageBahaa {
         url
         alt
