@@ -74,6 +74,7 @@ export default defineComponent({
       const introPhoto = event.currentTarget as HTMLElement;
       introPhoto.style.transform = 'translate(0, 0)';
     };
+
     // get year
     const year = new Date().getFullYear();
 
@@ -142,6 +143,15 @@ $component: "intro";
     }
   }
 
+  &__single-item-container {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+  }
+
   &-text-section {
     max-width: 120rem;
     margin: 5rem auto 10rem auto;
@@ -208,12 +218,7 @@ $component: "intro";
     }
 
     &__single-item-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
       display: flex;
-      justify-content: flex-end;
-      padding: 0rem 1.5rem 0rem 1.5rem;
     }
 
 
