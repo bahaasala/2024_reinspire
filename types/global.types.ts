@@ -90,6 +90,19 @@ interface Collection {
   visualsThreeColumns: Image[];
 }
 
+// single request
+interface Request {
+  id: string,
+  slug: string,
+  client: string,
+  website: string,
+  engagement: string,
+  clarify: string,
+  act: string,
+  debriefing: string,
+  prototype: string,
+}
+
 // category
 interface Category {
   name: string;
