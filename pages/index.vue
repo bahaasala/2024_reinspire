@@ -11,7 +11,7 @@
     <ElementsAbout :homepage="homepage" />
     <ElementsContact :homepage="homepage" />
   </div>
-</template> 
+</template>
 
 <script lang="ts">
 import { ref, defineComponent, onMounted } from "vue";
@@ -91,7 +91,7 @@ $component: "home";
 
 .#{$component} {
 
-  margin-top: 120px;
+  // margin-top: 120px;
 
   @media (max-width: 767px) {
     margin-top: 0;

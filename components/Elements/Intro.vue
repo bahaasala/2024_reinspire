@@ -1,5 +1,15 @@
 <template>
   <div class="intro">
+    <section class="intro-sticky"
+      style="background-image: url('https://www.datocms-assets.com/101417/1711541003-reinspire-sticky-intro-test.jpg')">
+
+    </section>
+    <section class="intro-sticky">
+
+    </section>
+    <section class="intro-sticky">
+
+    </section>
     <section class="intro-section">
       <h2 class="visually-hidden">Reinspire Studio Introduction</h2>
       <ul>
@@ -91,7 +101,38 @@ export default defineComponent({
 $component: "intro";
 
 .#{$component} {
-  margin-top: 3rem;
+  // margin-top: 3rem;
+
+  // sticky full width intro sections
+  &-sticky:first-of-type {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-attachment: fixed;
+    border: 1px solid red;
+  }
+
+  &-sticky:nth-of-type(2),
+  &-sticky:nth-of-type(3),
+  &-sticky:nth-of-type(4) {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-attachment: fixed;
+    border: 0.5px solid red;
+  }
 
   &-section {
     ul {
