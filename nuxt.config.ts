@@ -34,5 +34,5 @@ export default defineNuxtConfig({
 
   css: ["@/assets/style/scss/index.scss"],
 
-  modules: ["@sidebase/nuxt-session", "nuxt-simple-sitemap"],
+  modules: ["@sidebase/nuxt-session", "@nuxt/image"],
 });

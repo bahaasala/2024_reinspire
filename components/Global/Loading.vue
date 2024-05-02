@@ -30,12 +30,12 @@
         </div>
 
         <div class="loading__picture" ref="loadingPicture">
-          <img
+          <!-- <img
             ref="loadingPictureImage"
             class="black-white"
             src="https://www.datocms-assets.com/101417/1688383873-reinspire_art_3.jpg"
             alt="Reinspire Loading"
-          />
+          /> -->
           <div class="image-overlay"></div>
         </div>
       </div>
@@ -133,7 +133,7 @@ onMounted(() => {
   });
 });
 
-onBeforeUnmount(() => {});
+onBeforeUnmount(() => { });
 </script>
 
 <style lang="scss">
@@ -147,6 +147,7 @@ $component: "loading";
   top: 0;
   left: 0;
   z-index: 2999;
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -154,6 +155,7 @@ $component: "loading";
     align-items: center;
     height: 100%;
     padding: 30px;
+
     &__logo {
       position: absolute;
       // top: 50%;
@@ -165,6 +167,7 @@ $component: "loading";
       opacity: 0;
       margin-bottom: 50px;
     }
+
     &__image {
       //   opacity: 0;
       position: absolute;
@@ -176,6 +179,7 @@ $component: "loading";
       margin-bottom: 50px;
     }
   }
+
   &__logo {
     &--re {
       &-text {
@@ -184,43 +188,53 @@ $component: "loading";
         font-size: 50px;
       }
     }
+
     &--rest {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+
       //   transition: 0.5s ease-in-out;
       &-text {
         font-size: 50px;
       }
     }
+
     &--brand {
       opacity: 0;
+
       &-text {
         font-size: 30px;
       }
     }
   }
+
   &__bar-container {
     overflow: hidden;
     height: 60px;
   }
+
   &__bar {
     transition: 0.5s ease-in-out;
+
     &-percent {
       margin: 0;
       font-size: 50px;
     }
   }
+
   &__picture {
     max-width: 400px;
     transition: 0.5s ease-in-out;
     height: 0;
     overflow: hidden;
+
     img {
       width: 100%;
       object-fit: cover;
     }
   }
+
   @media (max-width: 767px) {
     &__container {
       &__image {

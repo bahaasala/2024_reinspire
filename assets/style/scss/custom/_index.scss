@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+// Px to REM: Override root font-size: 62.5%
+html {
+    font-size: 62.5%;
+}
+
 // General
 body{
     height: 100%;
