@@ -68,3 +68,24 @@ interface Work {
 interface Category {
   name: string;
 }
+
+// single proposal
+interface Proposal {
+  id: string;
+  proposalNumber: number;
+  proposalBanner: Image;
+  title: string;
+  website: string;
+  introduction: string;
+  praise: string;
+  improvements: string;
+  webInspirationTitle1: string;
+  webInspirationLink1: string;
+  webInspirationImage1: Image;
+  webInspirationTitle2: string;
+  webInspirationLink2: string;
+  webInspirationImage2: Image;
+  conceptPicture: Image;
+  conceptImprovements: string;
+  experimentationGallery: Image[];
+}
