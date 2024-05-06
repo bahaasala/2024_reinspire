@@ -72,11 +72,12 @@ interface Category {
 // single proposal
 interface Proposal {
   id: string;
-  proposalNumber: number;
+  slug: string;
   proposalBanner: Image;
   title: string;
   website: string;
   introduction: string;
+  introductionSelected: string;
   praise: string;
   improvements: string;
   webInspirationTitle1: string;

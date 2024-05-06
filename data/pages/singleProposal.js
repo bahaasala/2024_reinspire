@@ -1,7 +1,7 @@
 const query = `
-    query GetProposal($proposalNumber: Int!) {
-        proposal(filter: { proposalNumber: { eq: $proposalNumber } }) {
-            proposalNumber
+    query GetProposal($slug: String!) {
+        proposal(filter: { slug: { eq: $slug } }) {
+            slug
             proposalBanner {
                 url
                 alt
@@ -11,6 +11,7 @@ const query = `
             title
             website
             introduction
+            introductionSelected
             praise
             improvements
             webInspirationTitle1
@@ -42,8 +43,8 @@ const query = `
                 width
                 height
             }
-          }
-      }
+        }
+    }    
 `;
 
 export default query;
