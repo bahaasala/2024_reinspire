@@ -86,7 +86,7 @@
             <figure>
                 <img :src="proposal.conceptPicture.url" :alt="proposal.conceptPicture.alt" />
             </figure>
-            <div class="proposal-concept-text-container">
+            <div class="proposal-concept-container-text">
                 <p>{{ proposal.conceptImprovements }}</p>
             </div>
         </div>
@@ -404,6 +404,10 @@ $component: "proposal";
     }
 
     &-concept-container {
+        &-text {
+            width: 50%;
+        }
+
         display: flex;
         align-items: center;
         gap: 15rem;
@@ -530,6 +534,12 @@ $component: "proposal";
                         padding: 1.5rem;
                     }
                 }
+            }
+        }
+
+        &-concept-container {
+            &-text {
+                width: 100%;
             }
         }
 
