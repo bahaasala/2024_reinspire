@@ -43,7 +43,7 @@
       </ul>
     </section>
     <section class="intro-text-section">
-      <h2 class="visually-hidden">Reinspire Services</h2>
+      <!-- <h2 class="visually-hidden">Reinspire Services</h2> -->
       <p>{{ homepage.introText }}</p>
     </section>
   </div>
