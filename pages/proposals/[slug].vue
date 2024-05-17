@@ -410,6 +410,8 @@ $component: "proposal";
     }
 
     &-gallery {
+        border-bottom: solid 1px #363636;
+
         ul {
             margin: 15rem 0rem;
             padding: 0;
