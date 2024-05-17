@@ -4,8 +4,8 @@
     <div class="proposal">
         <div class="proposal-intro-container">
             <section>
-                <h1>{{ proposal.title }}</h1>
-                <p>Opportunities for growth</p>
+                <h1>Hey, {{ proposal.title }}</h1>
+                <p>Want to grow?</p>
             </section>
             <a :href="proposal.website" target="_blank">Your website</a>
         </div>
@@ -15,16 +15,16 @@
                 <p>{{ proposal.introductionSelected }}</p>
             </div>
             <figure>
-                <img src="https://www.datocms-assets.com/101417/1714817729-reinspire_proposal_intro_pic.jpg" alt="" />
+                <img src="https://www.datocms-assets.com/101417/1715027656-reinspire_proposal_intro.jpg" alt="" />
             </figure>
         </div>
         <div class="proposal-title-container">
             <section>
-                <h2>Growth Discovery</h2>
-                <p>Opportunities for growth</p>
+                <h2>To Discover</h2>
+                <p>Where to improve?</p>
             </section>
             <figure>
-                <img src="https://www.datocms-assets.com/101417/1714817548-reinspire_proposal_growth_pic.jpg"
+                <img src="https://www.datocms-assets.com/101417/1715028077-reinspire_proposal_growth.jpg"
                     :alt="proposal.proposalBanner.alt" />
             </figure>
         </div>
@@ -40,11 +40,11 @@
         </div>
         <div class="proposal-title-container">
             <section>
-                <h2>Innovative stores</h2>
-                <p>Fashion stores to be inspired by</p>
+                <h2>Be Inspired</h2>
+                <p>By best web experiences</p>
             </section>
             <figure>
-                <img src="https://www.datocms-assets.com/101417/1714817551-reinspire_proposal_inspiration_pic.jpg"
+                <img src="https://www.datocms-assets.com/101417/1715027652-reinspire_proposal_inspiration.jpg"
                     :alt="proposal.proposalBanner.alt" />
             </figure>
         </div>
@@ -74,11 +74,11 @@
         </div>
         <div class="proposal-title-container">
             <section>
-                <h2>Concept Experiments</h2>
-                <p>Experimental envoirments</p>
+                <h2>Your Future</h2>
+                <p>We don't just create, we collaberate</p>
             </section>
             <figure>
-                <img src="https://www.datocms-assets.com/101417/1714817551-reinspire_proposal_inspiration_pic.jpg"
+                <img src="https://www.datocms-assets.com/101417/1715027647-reinspire_proposal_concept.jpg"
                     :alt="proposal.proposalBanner.alt" />
             </figure>
         </div>
@@ -94,18 +94,18 @@
             <ul>
                 <li v-for="image in proposal.experimentationGallery">
                     <figure>
-                        <img :src="image.url" :alt="image.alt" />
+                        <img class="black-white" :src="image.url" :alt="image.alt" />
                     </figure>
                 </li>
             </ul>
         </div>
         <div class="proposal-title-container">
             <section>
-                <h2>Planning process </h2>
-                <p>Experience our fashion project</p>
+                <h2>Planning process</h2>
+                <p>From start to launch</p>
             </section>
             <figure>
-                <img src="https://www.datocms-assets.com/101417/1714817551-reinspire_proposal_inspiration_pic.jpg"
+                <img src="https://www.datocms-assets.com/101417/1715027661-reinspire_proposal_process.jpg"
                     :alt="proposal.proposalBanner.alt" />
             </figure>
         </div>
@@ -220,7 +220,7 @@ export default defineComponent({
                 );
                 proposal.value = fetchedProposal;
 
-                console.log(proposal.value);
+                // console.log(proposal.value);
 
                 if (!proposal.value) {
                     router.replace("/404");
@@ -346,7 +346,7 @@ $component: "proposal";
     }
 
     &-inspiration-sites {
-        padding: 5rem 0 15rem;
+        padding: 0rem 0rem 15rem 0rem;
         border-bottom: solid 1px #363636;
 
         ul {
@@ -464,6 +464,89 @@ $component: "proposal";
 
     &-our-projects {
         margin-top: 10rem;
+    }
+
+    @media (max-width: 767px) {
+
+        h1,
+        h2,
+        p {
+            // padding: 1.5rem;
+        }
+
+        figure {
+            width: 100%;
+        }
+
+        &-title-container,
+        &-intro-text-container,
+        &-research-container,
+        &-concept-container {
+            flex-direction: column;
+
+            h1,
+            h2,
+            h3,
+            p,
+            a {
+                padding: 1.5rem;
+            }
+        }
+
+        &-title-container {
+            align-items: flex-start;
+            gap: 0;
+        }
+
+        &-intro-container {
+            padding: 0;
+
+            h1,
+            p,
+            a {
+                padding: 1.5rem;
+            }
+        }
+
+        &-inspiration-sites {
+            ul {
+                li {
+                    a {
+                        gap: 3rem;
+                        flex-direction: column;
+                        padding: 5rem 0rem;
+                        align-items: start;
+                    }
+
+                    figure {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    p {
+                        padding: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &-gallery {
+            ul {
+                grid-template-columns: auto;
+            }
+        }
+
+        &-process {
+            ul {
+                flex-wrap: wrap
+            }
+        }
+
+        .projects__single-item-link {
+            margin: 35px 0px;
+            padding: 0;
+        }
     }
 }
 </style>
